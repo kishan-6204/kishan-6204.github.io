@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kishan shukla's Portfolio</title>
+  <title>Kishan Shukla | Web Developer</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -13,7 +13,10 @@
   <header>
     <div class="container">
       <nav>
-        <h1 class="logo">Kishan Shukla</h1>
+        <div class="logo-container">
+          <h1 class="logo">Kishan Shukla</h1>
+          <p class="tagline">Web Developer</p>
+        </div>
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
           <li><a href="#skills">Skills</a></li>
@@ -22,11 +25,17 @@
           <li><a href="#coding-profiles">Coding Profiles</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
+        <div class="mobile-menu-btn">
+          <i class="fas fa-bars"></i>
+        </div>
       </nav>
       <div class="hero">
-        <h1>Welcome to My Portfolio</h1>
-        <p>I build modern, responsive, and user-friendly websites.</p>
-        <a href="#projects" class="btn">View My Work</a>
+        <h1>Web Developer & <span class="highlight">Problem Solver</span></h1>
+        <p>Crafting responsive, user-friendly websites with clean and efficient code.</p>
+        <div class="cta-buttons">
+          <a href="#projects" class="btn primary-btn">View My Work</a>
+          <a href="#contact" class="btn secondary-btn">Contact Me</a>
+        </div>
       </div>
     </div>
   </header>
@@ -34,10 +43,21 @@
   <!-- About Section -->
   <section id="about">
     <div class="container">
-      <h2>About Me</h2>
+      <div class="section-header">
+        <h2>About Me</h2>
+        <div class="underline"></div>
+      </div>
       <div class="about-content">
-        <p>Hello! I'm a passionate web developer with experience in building modern and responsive websites. I love turning ideas into reality through code.</p>
-        <p>My skills include HTML, CSS, JavaScript, and more. I’m always eager to learn and explore new technologies.</p>
+        <div class="about-image">
+          <div class="image-placeholder">
+            <i class="fas fa-user"></i>
+          </div>
+        </div>
+        <div class="about-text">
+          <p>Hello! I'm a passionate web developer with experience in building modern and responsive websites. I specialize in creating clean, efficient, and user-friendly web solutions that help businesses achieve their goals.</p>
+          <p>With a strong foundation in HTML, CSS, JavaScript, and modern frameworks, I enjoy solving complex problems and turning ideas into functional, beautiful websites. I'm constantly learning and exploring new technologies to stay at the forefront of web development.</p>
+          <a href="#" class="btn download-btn"><i class="fas fa-download"></i> Download Resume</a>
+        </div>
       </div>
     </div>
   </section>
@@ -45,24 +65,76 @@
   <!-- Skills Section -->
   <section id="skills">
     <div class="container">
-      <h2>Skills</h2>
-      <div class="skills-grid">
-        <div class="skill">
-          <h3>HTML</h3>
-          <div class="skill-bar">
-            <div class="skill-level" style="width: 95%;"></div>
+      <div class="section-header">
+        <h2>Technical Skills</h2>
+        <div class="underline"></div>
+      </div>
+      <div class="skills-container">
+        <div class="skills-category">
+          <h3>Frontend Development</h3>
+          <div class="skills-grid">
+            <div class="skill">
+              <div class="skill-icon"><i class="fab fa-html5"></i></div>
+              <h4>HTML5</h4>
+              <div class="skill-bar">
+                <div class="skill-level" style="width: 95%;"></div>
+                <span class="skill-percent">95%</span>
+              </div>
+            </div>
+            <div class="skill">
+              <div class="skill-icon"><i class="fab fa-css3-alt"></i></div>
+              <h4>CSS3</h4>
+              <div class="skill-bar">
+                <div class="skill-level" style="width: 90%;"></div>
+                <span class="skill-percent">90%</span>
+              </div>
+            </div>
+            <div class="skill">
+              <div class="skill-icon"><i class="fab fa-js"></i></div>
+              <h4>JavaScript</h4>
+              <div class="skill-bar">
+                <div class="skill-level" style="width: 80%;"></div>
+                <span class="skill-percent">80%</span>
+              </div>
+            </div>
+            <div class="skill">
+              <div class="skill-icon"><i class="fab fa-react"></i></div>
+              <h4>React</h4>
+              <div class="skill-bar">
+                <div class="skill-level" style="width: 75%;"></div>
+                <span class="skill-percent">75%</span>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="skill">
-          <h3>CSS</h3>
-          <div class="skill-bar">
-            <div class="skill-level" style="width: 90%;"></div>
-          </div>
-        </div>
-        <div class="skill">
-          <h3>JavaScript</h3>
-          <div class="skill-bar">
-            <div class="skill-level" style="width: 80%;"></div>
+        
+        <div class="skills-category">
+          <h3>Tools & Technologies</h3>
+          <div class="tools-grid">
+            <div class="tool">
+              <div class="tool-icon"><i class="fab fa-git-alt"></i></div>
+              <span>Git</span>
+            </div>
+            <div class="tool">
+              <div class="tool-icon"><i class="fab fa-github"></i></div>
+              <span>GitHub</span>
+            </div>
+            <div class="tool">
+              <div class="tool-icon"><i class="fab fa-npm"></i></div>
+              <span>npm</span>
+            </div>
+            <div class="tool">
+              <div class="tool-icon"><i class="fas fa-terminal"></i></div>
+              <span>Command Line</span>
+            </div>
+            <div class="tool">
+              <div class="tool-icon"><i class="fas fa-code"></i></div>
+              <span>VS Code</span>
+            </div>
+            <div class="tool">
+              <div class="tool-icon"><i class="fas fa-mobile-alt"></i></div>
+              <span>Responsive Design</span>
+            </div>
           </div>
         </div>
       </div>
@@ -72,18 +144,57 @@
   <!-- Projects Section -->
   <section id="projects">
     <div class="container">
-      <h2>Projects</h2>
+      <div class="section-header">
+        <h2>Featured Projects</h2>
+        <div class="underline"></div>
+      </div>
       <div class="project-grid">
         <div class="project">
-          <h3>Project 1</h3>
-          <p>A brief description of your project. What technologies did you use? What problem did it solve?</p>
-          <a href="#" class="btn">View Project</a>
+          <div class="project-image">
+            <div class="image-placeholder">
+              <i class="fas fa-laptop-code"></i>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>E-Commerce Website</h3>
+            <p class="project-tags">
+              <span>HTML5</span>
+              <span>CSS3</span>
+              <span>JavaScript</span>
+              <span>React</span>
+            </p>
+            <p class="project-description">A fully responsive e-commerce website featuring product filtering, shopping cart functionality, and secure checkout process.</p>
+            <div class="project-links">
+              <a href="#" class="btn project-btn"><i class="fas fa-eye"></i> Live Demo</a>
+              <a href="#" class="btn project-btn"><i class="fab fa-github"></i> Source Code</a>
+            </div>
+          </div>
         </div>
+        
         <div class="project">
-          <h3>Project 2</h3>
-          <p>Another project description. Keep it concise and impactful.</p>
-          <a href="#" class="btn">View Project</a>
+          <div class="project-image">
+            <div class="image-placeholder">
+              <i class="fas fa-chart-line"></i>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>Dashboard Application</h3>
+            <p class="project-tags">
+              <span>HTML5</span>
+              <span>CSS3</span>
+              <span>JavaScript</span>
+              <span>Chart.js</span>
+            </p>
+            <p class="project-description">An interactive dashboard that visualizes data with various charts and graphs, featuring dark mode and data export capabilities.</p>
+            <div class="project-links">
+              <a href="#" class="btn project-btn"><i class="fas fa-eye"></i> Live Demo</a>
+              <a href="#" class="btn project-btn"><i class="fab fa-github"></i> Source Code</a>
+            </div>
+          </div>
         </div>
+      </div>
+      <div class="more-projects">
+        <a href="#" class="btn">View All Projects <i class="fas fa-arrow-right"></i></a>
       </div>
     </div>
   </section>
@@ -91,19 +202,35 @@
   <!-- Certifications Section -->
   <section id="certifications">
     <div class="container">
-      <h2>Certifications</h2>
+      <div class="section-header">
+        <h2>Certifications</h2>
+        <div class="underline"></div>
+      </div>
       <div class="certifications-grid">
         <div class="certification">
-          <h3>Certification 1</h3>
-          <p>Issued by: Organization Name</p>
-          <p>Date: Month, Year</p>
-          <a href="#" class="btn">View Certificate</a>
+          <div class="certification-icon">
+            <i class="fas fa-certificate"></i>
+          </div>
+          <div class="certification-content">
+            <h3>Full Stack Web Development</h3>
+            <p class="certification-issuer">Issued by: Udemy</p>
+            <p class="certification-date">August, 2023</p>
+            <p class="certification-description">Comprehensive course covering frontend and backend technologies including HTML, CSS, JavaScript, Node.js, and MongoDB.</p>
+            <a href="#" class="btn certification-btn">View Certificate</a>
+          </div>
         </div>
+        
         <div class="certification">
-          <h3>Certification 2</h3>
-          <p>Issued by: Organization Name</p>
-          <p>Date: Month, Year</p>
-          <a href="#" class="btn">View Certificate</a>
+          <div class="certification-icon">
+            <i class="fas fa-certificate"></i>
+          </div>
+          <div class="certification-content">
+            <h3>JavaScript Algorithms and Data Structures</h3>
+            <p class="certification-issuer">Issued by: freeCodeCamp</p>
+            <p class="certification-date">May, 2023</p>
+            <p class="certification-description">Advanced course on JavaScript covering algorithms, data structures, and programming patterns.</p>
+            <a href="#" class="btn certification-btn">View Certificate</a>
+          </div>
         </div>
       </div>
     </div>
@@ -112,22 +239,39 @@
   <!-- Coding Profiles Section -->
   <section id="coding-profiles">
     <div class="container">
-      <h2>Coding Profiles</h2>
+      <div class="section-header">
+        <h2>Coding Profiles</h2>
+        <div class="underline"></div>
+      </div>
       <div class="profiles-grid">
         <div class="profile">
+          <div class="profile-icon">
+            <i class="fas fa-code"></i>
+          </div>
           <h3>LeetCode</h3>
           <p>Username: 23r05a6204</p>
-          <a href="https://leetcode.com/23r05a6204" class="btn">Visit Profile</a>
+          <p class="profile-stats">Problems Solved: 150+</p>
+          <a href="https://leetcode.com/23r05a6204" class="btn profile-btn"><i class="fas fa-external-link-alt"></i> Visit Profile</a>
         </div>
+        
         <div class="profile">
+          <div class="profile-icon">
+            <i class="fab fa-github"></i>
+          </div>
           <h3>GitHub</h3>
           <p>Username: kishan-6204</p>
-          <a href="https://github.com/kishan-6204" class="btn">Visit Profile</a>
+          <p class="profile-stats">Repositories: 15+</p>
+          <a href="https://github.com/kishan-6204" class="btn profile-btn"><i class="fas fa-external-link-alt"></i> Visit Profile</a>
         </div>
+        
         <div class="profile">
+          <div class="profile-icon">
+            <i class="fab fa-hackerrank"></i>
+          </div>
           <h3>HackerRank</h3>
           <p>Username: 23r05a6204</p>
-          <a href="https://hackerrank.com/23r05a6204" class="btn">Visit Profile</a>
+          <p class="profile-stats">5-Star Problem Solver</p>
+          <a href="https://hackerrank.com/23r05a6204" class="btn profile-btn"><i class="fas fa-external-link-alt"></i> Visit Profile</a>
         </div>
       </div>
     </div>
@@ -136,13 +280,50 @@
   <!-- Contact Section -->
   <section id="contact">
     <div class="container">
-      <h2>Contact Me</h2>
-      <div class="contact-content">
-        <p>Feel free to reach out to me for collaborations or just a friendly hello!</p>
-        <div class="social-links">
-          <a href="mailto:kishanshukla631@gmail.com"><i class="fas fa-envelope"></i></a>
-          <a href="https://github.com/yourusername"><i class="fab fa-github"></i></a>
-          <a href="https://linkedin.com/in/yourusername"><i class="fab fa-linkedin"></i></a>
+      <div class="section-header">
+        <h2>Contact Me</h2>
+        <div class="underline"></div>
+      </div>
+      <div class="contact-container">
+        <div class="contact-info">
+          <p>I'm always interested in hearing about new projects and opportunities. Feel free to reach out!</p>
+          <div class="contact-details">
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <span>kishanshukla631@gmail.com</span>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Hyderabad, India</span>
+            </div>
+          </div>
+          <div class="social-links">
+            <a href="mailto:kishanshukla631@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+            <a href="https://github.com/kishan-6204" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/kishan-shukla" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://twitter.com/KishanShukla" title="Twitter"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        <div class="contact-form">
+          <form>
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" placeholder="Subject">
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="btn submit-btn">Send Message <i class="fas fa-paper-plane"></i></button>
+          </form>
         </div>
       </div>
     </div>
@@ -151,8 +332,30 @@
   <!-- Footer -->
   <footer>
     <div class="container">
-      <p>&copy; 2023 Your Name. All rights reserved.</p>
+      <div class="footer-content">
+        <div class="footer-logo">
+          <h2>Kishan Shukla</h2>
+          <p>Web Developer</p>
+        </div>
+        <div class="footer-links">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#certifications">Certifications</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2023 Kishan Shukla. All Rights Reserved.</p>
+      </div>
     </div>
   </footer>
+
+  <script>
+    // Simple mobile menu toggle
+    document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+      document.querySelector('.nav-links').classList.toggle('show');
+    });
+  </script>
 </body>
 </html>
