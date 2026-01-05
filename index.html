@@ -277,57 +277,58 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
   <section id="contact">
-    <div class="container">
-      <div class="section-header">
-        <h2>Contact Me</h2>
-        <div class="underline"></div>
+  <div class="container">
+    <div class="section-header">
+      <h2>Contact Me</h2>
+      <div class="underline"></div>
+    </div>
+    <div class="contact-container">
+      <div class="contact-info">
+        <p>I'm always interested in hearing about new projects and opportunities. Feel free to reach out!</p>
+        <div class="contact-details">
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <span>kishanshukla631@gmail.com</span>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Hyderabad, India</span>
+          </div>
+        </div>
+        <div class="social-links">
+          <a href="mailto:kishanshukla631@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+          <a href="https://github.com/kishan-6204" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://linkedin.com/in/kishan-shukla" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://twitter.com/KishanShukla" title="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
       </div>
-      <div class="contact-container">
-        <div class="contact-info">
-          <p>I'm always interested in hearing about new projects and opportunities. Feel free to reach out!</p>
-          <div class="contact-details">
-            <div class="contact-item">
-              <i class="fas fa-envelope"></i>
-              <span>kishanshukla631@gmail.com</span>
-            </div>
-            <div class="contact-item">
-              <i class="fas fa-map-marker-alt"></i>
-              <span>Hyderabad, India</span>
-            </div>
+      <div class="contact-form">
+        <form id="contact-form" action="https://formspree.io/f/xeeonnng" method="POST">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
           </div>
-          <div class="social-links">
-            <a href="mailto:kishanshukla631@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-            <a href="https://github.com/kishan-6204" title="GitHub"><i class="fab fa-github"></i></a>
-            <a href="https://linkedin.com/in/kishan-shukla" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            <a href="https://twitter.com/KishanShukla" title="Twitter"><i class="fab fa-twitter"></i></a>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
           </div>
-        </div>
-        <div class="contact-form">
-          <form>
-            <div class="form-group">
-              <label for="name">Name</label>
-              <input type="text" id="name" placeholder="Your Name" required>
-            </div>
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" placeholder="Your Email" required>
-            </div>
-            <div class="form-group">
-              <label for="subject">Subject</label>
-              <input type="text" id="subject" placeholder="Subject">
-            </div>
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea id="message" placeholder="Your Message" required></textarea>
-            </div>
-            <button type="submit" class="btn submit-btn">Send Message <i class="fas fa-paper-plane"></i></button>
-          </form>
-        </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="Subject">
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+          </div>
+          <button type="submit" class="btn submit-btn">Send Message <i class="fas fa-paper-plane"></i></button>
+          
+          <p id="form-status" style="margin-top: 15px; display: none; font-weight: 500;"></p>
+        </form>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- Footer -->
   <footer>
@@ -352,10 +353,44 @@
   </footer>
 
   <script>
-    // Simple mobile menu toggle
-    document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
-      document.querySelector('.nav-links').classList.toggle('show');
+  var form = document.getElementById("contact-form");
+  
+  async function handleSubmit(event) {
+    event.preventDefault();
+    var status = document.getElementById("form-status");
+    var data = new FormData(event.target);
+    
+    fetch(event.target.action, {
+      method: form.method,
+      body: data,
+      headers: {
+          'Accept': 'application/json'
+      }
+    }).then(response => {
+      if (response.ok) {
+        status.innerHTML = "Thanks! Message sent successfully.";
+        status.style.color = "#2563eb"; // Using your primary blue color
+        status.style.display = "block";
+        form.reset(); // Clears the form inputs
+      } else {
+        response.json().then(data => {
+          if (Object.hasOwn(data, 'errors')) {
+            status.innerHTML = data["errors"].map(error => error["message"]).join(", ");
+          } else {
+            status.innerHTML = "Oops! There was a problem submitting your form";
+          }
+          status.style.color = "red"; // Error color
+          status.style.display = "block";
+        })
+      }
+    }).catch(error => {
+      status.innerHTML = "Oops! There was a problem submitting your form";
+      status.style.color = "red";
+      status.style.display = "block";
     });
-  </script>
+  }
+  
+  form.addEventListener("submit", handleSubmit);
+</script>
 </body>
 </html>
